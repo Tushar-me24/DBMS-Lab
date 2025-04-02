@@ -1,0 +1,48 @@
+DBMS LAB
+
+---------------------------------------------------------------------------------------
+create table student214(Rollno varchar(50) , name char(50) , dept varchar(15) , no_of_courses number(2));
+Desc student214;
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',7);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',1);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',5);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',9);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',6);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',4);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',3);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',1);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',4);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',6);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',8);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',2);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',1);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',6);
+insert into student214 values('1/23/set/bcs/214','Tushar','CSE',4);
+
+delete from student214 where no_of_courses >=7;
+truncate table student214;
+select * from student214;
+drop table student214;
+
+create table c_records(c_id int primary key,
+customer_name varchar(20),
+country varchar(20));
+
+insert into c_records values(1,'Tushar','India');
+insert into c_records values(2,'Robert','USA');
+insert into c_records values(3,'Cris','Rio');
+insert into c_records values(4,'Maggie','India');
+insert into c_records values(5,'Tom','USA');
+insert into c_records values(6,'Dani','China');
+insert into c_records values(7,'Jenifer','USA');
+insert into c_records values(8,'AustinLee','India');
+insert into c_records values(9,'Bruce','China');
+insert into c_records values(10,'Jonny','India');
+
+select count(c_id),country from c_records group by country;
+select count(c_id) , country from c_records group by country having count(c_id)>2;
+select count(c_id),country from c_records group by country having count(c_id)>2 order by count(c_id) asc;
+
+
+create view custview_records as select * from c_records;
+------------------------------------------------------------------------------------------------
